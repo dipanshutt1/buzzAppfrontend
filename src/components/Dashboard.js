@@ -1,25 +1,48 @@
-import React ,{Component} from 'react';
-import BuzzComponent from "./Buzz";
+import React, { Component } from 'react';
 import Menu from './Menu';
 import Complaint from './Complaint'
-import Form from './Form'
+import Resolve from './Resolve';
+import { Route } from 'react-router-dom';
+import Buzz from './Buzz';
 
-export default class Dashboard extends Component{
-    render(){
-        return(
+class Dashboard extends Component {
+
+    logout = () => {
+        localStorage.removeItem('token');
+        this.props.history.push('/')
+    }
+
+    render() {
+        return (
             <div>
                 <header>
-                    <h2>header component</h2>
+                    <nav>
+                        <button onClick={this.logout}>Logout</button>
+                    </nav>
                 </header>
-                <div>
-                    <Menu />
-                </div>
                 <main>
-                    <Form />
-                    <Complaint />
+                    <div>dashboard Component</div>
+                    <aside>
+                        <Menu />
+                    </aside>
+                    <section>
+                        <Route
+                            exact path={`${this.props.match.path}/buzz`}
+                            component={Buzz}
+                        />
+                        <Route
+                            exact path="/dashboard/complaints"
+                            component={Complaint}
+                        />
+                        <Route
+                            exact path="/dashboard/resolve"
+                            component={Resolve}
+                        />
+                    </section>
                 </main>
-
             </div>
         )
     }
 }
+
+export default Dashboard;
