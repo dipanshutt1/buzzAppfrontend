@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{Component} from 'react';
 import './App.css';
+import Login from './components/login';
+import {Redirect, Route, BrowserRouter as Router} from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import TokenComponent from './components/Token'
+export default class App extends Component {
+  render() {
+     return (
+        <div>
+            <Router>
+                <Route exact path={'/'} component={Login}/>
+                <Route path={'/token'} component={TokenComponent}/>
+                <PrivateRoute path={'/dashboard'} component={Dashboard}/>
+            </Router>
+        </div>
+    );
+  }
+}           
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const PrivateRoute = ({component: Component, ...rest}) => {
+    if(localStorage.getItem('token')) {
+        return <Route {...rest} render={(props) => {
+            return <Component {...props}/>
+        }
+        }/>
 
-export default App;
+    } else {
+        return <Route {...rest} render={(props) => {
+            return <Redirect {...props} to={'/'}/>
+        }
+        }/>
+    }
+};
+
+
