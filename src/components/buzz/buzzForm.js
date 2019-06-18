@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {addBuzz} from '../action/buzzAction';
+import {addBuzz} from '../../action/buzzAction';
 import {connect} from 'react-redux';
 
-class Form extends Component {
+class BuzzForm extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -79,4 +79,4 @@ const mapDispatchToProps = {
     addBuzz
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form)
+export default connect(mapStateToProps, mapDispatchToProps)(BuzzForm)

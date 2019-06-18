@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import {addComplaint} from "../../action/complaintAction";
+import {connect} from 'react-redux';
 
-class Complaint extends Component {
+class ComplaintForm extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -29,7 +31,9 @@ class Complaint extends Component {
         complaintData.append('concern',newComplaint.concern);
         complaintData.append('title',newComplaint.title);
         complaintData.append('image',newComplaint.image);
+        console.log('complaint data',complaintData)
         this.props.addComplaint(complaintData);
+
         this.setState({
             department:'',
             concern:'',
@@ -40,10 +44,7 @@ class Complaint extends Component {
     render() {
         return (
             <div>
-                <form action='http://localhost:8080/dashboard/complaint'
-                      method="POST"
-                      encType={'multipart/form-data'}
-                      onSubmit={this.handleSubmit}
+                <form onSubmit={this.handleSubmit}
                 >
                     <label htmlFor="department">Select Department</label>
                     <select name={'department'}
@@ -74,5 +75,14 @@ class Complaint extends Component {
         );
     }
 }
+const mapStateToProps=(state)=>{
+    console.log('mapStateToProps',state);
+    return {
+        complaint:state.complaintReducer
+    }
+}
 
-export default Complaint;
+const mapDispatchToProps={
+    addComplaint
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ComplaintForm);

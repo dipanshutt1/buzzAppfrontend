@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import BuzzThread from "./buzzThread";
-import {showBuzz} from "../action/buzzAction";
+import {showBuzz} from "../../action/buzzAction";
 
 class BuzzPost extends Component {
     componentDidMount() {

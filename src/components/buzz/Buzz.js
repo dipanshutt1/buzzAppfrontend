@@ -1,6 +1,6 @@
 import React,{Component} from "react";
-import Form from "./buzz/buzzForm";
-import BuzzPost from "./buzz/buzzPost";
+import Form from "./buzzForm";
+import BuzzPost from "./buzzPost";
 
 export default class BuzzComponent extends Component{
 
