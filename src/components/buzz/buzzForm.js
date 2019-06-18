@@ -8,7 +8,7 @@ class Form extends Component {
         this.state={
             buzzContent:'',
             category:'activity',
-            image:[]
+            image:''
         }
     }
 
@@ -25,13 +25,12 @@ class Form extends Component {
         formData.append('buzzContent',newBuzz.buzzContent);
         formData.append('category',newBuzz.category);
         formData.append('image',newBuzz.image);
-
-
-        this.props.addBuzz(formData)
+        // console.log('hi', formData);
+        this.props.addBuzz(formData);
         this.setState({
             buzzContent:'',
             category:'activity',
-            image:[]
+            image:''
         })
     }
     handleFileUpload=(e)=>{
@@ -58,7 +57,6 @@ class Form extends Component {
                     <input type="file"
                            name='image'
                            accept='image/*'
-                           value={this.state.image}
                            onChange={this.handleFileUpload}
                     />
                     <input type={'submit'}

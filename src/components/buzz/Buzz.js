@@ -1,5 +1,6 @@
 import React,{Component} from "react";
-import Form from "./Form";
+import Form from "./buzz/buzzForm";
+import BuzzPost from "./buzz/buzzPost";
 
 export default class BuzzComponent extends Component{
 
@@ -7,6 +8,7 @@ export default class BuzzComponent extends Component{
         return (
             <div>
                 <Form/>
+                <BuzzPost />
             </div>
         )
     }
