@@ -3,14 +3,14 @@ const InitialState={
     complaint:[]
 }
 
-const complaintReducer=(state =InitialState,action)=>{
+const complaintReducer=(state = InitialState,action)=>{
     switch(action.type){
 
         case 'COMPLAINT_POST':{
             console.log(action.data);
             return {
                 ...state,
-                complaint:[...state.complaint, action.data]
+                complaint:[action.data,...state.complaint]
             }
     }
         case 'COMPLAINT_SHOW':  {
