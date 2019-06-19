@@ -1,0 +1,15 @@
+.navbarLogout{
+    background-color: black;
+}
+.banner{
+    background: url("../assets/banner.jpeg");
+    display: block;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+}

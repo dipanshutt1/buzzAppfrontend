@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Menu from './Menu';
-import Complaint from './Complaint'
-import Resolve from './Resolve';
-import { Route } from 'react-router-dom';
-import Buzz from './Buzz';
+import Complaint from './complaint/complaint'
+import Resolve from './resolve/Resolve';
+import {Route} from 'react-router-dom';
+import Buzz from './buzz/Buzz';
+import User from './userProfile/user'
+import './dashboard.css'
+import {connect} from "react-redux";
 
 class Dashboard extends Component {
 
@@ -16,14 +19,16 @@ class Dashboard extends Component {
         return (
             <div>
                 <header>
-                    <nav>
+                    <nav className='navbarLogout'>
                         <button onClick={this.logout}>Logout</button>
                     </nav>
+                    <div className='banner'></div>
                 </header>
                 <main>
-                    <div>dashboard Component</div>
                     <aside>
-                        <Menu />
+                        <Menu/>
+                        <User/>
+
                     </aside>
                     <section>
                         <Route
@@ -31,13 +36,15 @@ class Dashboard extends Component {
                             component={Buzz}
                         />
                         <Route
-                            exact path="/dashboard/complaints"
+                            exact path="/dashboard/complaint"
                             component={Complaint}
                         />
-                        <Route
+                        {this.props.user.userProfile.userRole === 'USER' ? null : <Route
                             exact path="/dashboard/resolve"
                             component={Resolve}
-                        />
+                        />}
+
+
                     </section>
                 </main>
             </div>
@@ -45,4 +52,10 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+const mapStateToProps = (store) => {
+    return {
+        user: store.userProfileReducer
+    }
+};
+
+export default connect(mapStateToProps, undefined)(Dashboard);
