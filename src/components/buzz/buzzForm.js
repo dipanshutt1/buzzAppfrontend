@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {addBuzz} from '../../action/buzzAction';
 import {connect} from 'react-redux';
+import './buzz.css';
 
 class BuzzForm extends Component {
     constructor(props){
@@ -41,25 +42,33 @@ class BuzzForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}
+                <form className='buzzForm'
+                      onSubmit={this.handleSubmit}
                       action='http://localhost:8080/dashboard/buzz'
                       method="POST"
                       encType={'multipart/form-data'}
                       >
-                    <textarea name='buzzContent'
+                    <label className='label' htmlFor="create buzz">Create Buzz</label>
+                    <textarea className='buzzContent' name='buzzContent'
                               placeholder={'Create your buzz here!!!!!'}
                               value={this.state.buzzContent}
-                              onChange={this.handleChange}                    />
-                    <select name={'category'} onChange={this.handleChange}>
-                        <option value={'activity'}>Activity</option>
-                        <option value={'LostFound'}>Lost & Found</option>
-                    </select>
-                    <input type="file"
-                           name='image'
-                           accept='image/*'
-                           onChange={this.handleFileUpload}
+                              onChange={this.handleChange}
+                              cols="45"
+                              rows="10"
                     />
-                    <input type={'submit'}
+                    <div className='fromWrapper'>
+                        <input type="file"
+                               name='image'
+                               accept='image/*'
+                               onChange={this.handleFileUpload}
+                        />
+                        <select name={'category'} onChange={this.handleChange}>
+                            <option value={'activity'}>Activity</option>
+                            <option value={'LostFound'}>Lost & Found</option>
+                        </select>
+                    </div>
+
+                    <input className='btn' type={'submit'}
                            value={'POST'}
                     />
                 </form>

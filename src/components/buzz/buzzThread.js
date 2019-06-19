@@ -10,7 +10,7 @@ class BuzzThread extends Component {
                 <ul>
                     <li>{content}</li>
                     <li>{category}</li>
-                    <li><img src={imageUrl} alt="image"/></li>
+                    <li><img src={imageUrl} alt=""/></li>
                     <li>{date_created}</li>
                     {/*<li onClick={this.handleChange}>Like:{like.length}</li>*/}
                     {/*<li>Dislike:{dislike.length}</li>*/}

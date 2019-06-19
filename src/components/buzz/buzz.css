@@ -1,0 +1,18 @@
+.label{
+    display: block;
+    padding: 10px 0;
+}
+.buzzForm{
+    border: 2px solid grey;
+}
+.buzzContent{
+    display: block;
+}
+
+.btn{
+    display: block;
+}
+.fromWrapper{
+    display: flex;
+    justify-content: space-between;
+}
