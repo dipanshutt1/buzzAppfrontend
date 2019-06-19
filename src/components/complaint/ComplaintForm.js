@@ -6,7 +6,7 @@ class ComplaintForm extends Component {
     constructor(props){
         super(props);
         this.state={
-            department:'admin',
+            department:'Admin',
             concern:'',
             title:'',
             image:''
@@ -35,7 +35,7 @@ class ComplaintForm extends Component {
         this.props.addComplaint(complaintData);
 
         this.setState({
-            department:'',
+            department:newComplaint.department,
             concern:'',
             title:'',
             image:''
@@ -44,12 +44,10 @@ class ComplaintForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}
-                >
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor="department">Select Department</label>
-                    <select name={'department'}
-                            onChange={this.handleChange}>
-                        <option value={'Admin'}>Admin</option>
+                    <select name={'department'} onChange={this.handleChange}>
+                        <option value={'INFRASTRUCTURE'}>INFRASTRUCTURE</option>
                         <option value={'IT'}>IT</option>
                         <option value={'HR'}>HR</option>
                     </select>
@@ -67,7 +65,8 @@ class ComplaintForm extends Component {
                     <input type="file"
                            name='image'
                            accept='image/*'
-                           onChange={this.handleFileUpload}/>
+                           onChange={this.handleFileUpload}
+                    />
                     <input type="submit"
                            value={'POST'}/>
                 </form>
