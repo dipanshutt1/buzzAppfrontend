@@ -12,20 +12,23 @@ export const addBuzz=(formData)=> dispatch=> {
         }
     })
         .then(res=>{
-            if(res.data.message='data storage done'){
-                console.log(`hehehe ${res.data.data}`);
-                dispatch(addBuzzPostToState(res.data.data));
-            }
+            // if(res.data.message='data storage done'){
+                if(res.data.message==="Success")
+                {
+                    console.log(`hehehe` , res.data);
+                    dispatch(addBuzzPostToState(res.data.result))
+                }
+            // }
         }).catch((err) => {
             console.error(err);
     })
 }
-export const addBuzzPostToState=(data)=>{
-    return {
+const addBuzzPostToState=(data)=>
+    ({
         type:'BUZZ_POST',
         data
-    }
-}
+
+});
 export const showBuzz=()=> dispatch => {
     axiosInstance({
         method:'get',
