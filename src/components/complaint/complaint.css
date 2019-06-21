@@ -1,0 +1,15 @@
+.complaint-list{
+    margin-top: 20px;
+    border: 1px solid lightgray;
+}
+
+.complaint-title{
+    font-size: 20px;
+    background-color: lightgrey;
+    text-align: start;
+    padding: 2px 10px;
+}
+
+.formContainer{
+    margin: 20px;
+}

@@ -6,7 +6,7 @@ class ComplaintForm extends Component {
     constructor(props){
         super(props);
         this.state={
-            department:'Admin',
+            department:'IT',
             concern:'',
             title:'',
             image:''
@@ -43,32 +43,49 @@ class ComplaintForm extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="formContainer">
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="department">Select Department</label>
-                    <select name={'department'} onChange={this.handleChange}>
-                        <option value={'INFRASTRUCTURE'}>INFRASTRUCTURE</option>
-                        <option value={'IT'}>IT</option>
-                        <option value={'HR'}>HR</option>
-                    </select>
-                    <label htmlFor="title">Title</label>
-                    <input type="text"
-                           name={'title'}
-                           onChange={this.handleChange}
-                           value={this.state.title}/>
-                    <label htmlFor="concern">Your Concern</label>
-                    <textarea name={'concern'}
-                              cols="30"
-                              rows="10"
-                              onChange={this.handleChange}
-                              value={this.state.concern} />
-                    <input type="file"
-                           name='image'
-                           accept='image/*'
-                           onChange={this.handleFileUpload}
-                    />
-                    <input type="submit"
-                           value={'POST'}/>
+                    <div className='form-row'>
+                        <div className='form-group col-md-6'>
+                            <label htmlFor="department">Select Department</label>
+                            <select name={'department'} classname="form-control" onChange={this.handleChange}>
+                                <option value={'IT'}>IT</option>
+                                <option value={'INFRASTRUCTURE'}>INFRASTRUCTURE</option>
+                                <option value={'HR'}>HR</option>
+                            </select>
+                        </div>
+                        <div className='form-group col-md-6'>
+                            <label htmlFor="title">Title</label>
+                            <input type="text"
+                                   className="form-control"
+                                   name={'title'}
+                                   onChange={this.handleChange}
+                                   value={this.state.title}/>
+                        </div>
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor="concern">Your Concern</label>
+                        <textarea name={'concern'}
+                                  className="form-control"
+                                  // cols="30"
+                                  rows="5"
+                                  onChange={this.handleChange}
+                                  value={this.state.concern} />
+                    </div>
+                    <div className="form-row wrapper">
+                        <div className="form-group col-md-6">
+                            <input type="file"
+                                   name='image'
+                                   accept='image/*'
+                                   onChange={this.handleFileUpload}
+                            />
+                        </div>
+                        <div className="form-group col-md-6">
+                            <input type="submit"
+                                   value={'POST'}/>
+                        </div>
+                    </div>
+
                 </form>
             </div>
         );
