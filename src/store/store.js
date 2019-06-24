@@ -10,4 +10,8 @@ const store=createStore(
     reducers,
     composeEnhancers(applyMiddleware(thunk))
 );
+
+store.subscribe(() => {
+    console.log("Store has changed", store.getState());
+});
 export default store;
