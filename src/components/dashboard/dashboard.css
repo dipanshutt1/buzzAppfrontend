@@ -1,9 +1,8 @@
 .navbarLogout{
-    background-color: black;
+    display: flex;
+    justify-content: space-between;
 }
-.banner{
-    background: url("../assets/banner.jpeg");
-    display: block;
+.bannerItem{
     height: 400px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,4 +11,8 @@
 main{
     display: flex;
     justify-content: space-around;
+}
+.carouselBanner{
+    margin: 10px;
+    border-radius:10px;
 }
