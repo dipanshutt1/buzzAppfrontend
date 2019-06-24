@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import './App.css';
 import Login from './components/login/login';
 import {Redirect, Route, BrowserRouter as Router} from "react-router-dom";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
 import TokenComponent from './components/Token'
 import User from "./components/userProfile/user";
 export default class App extends Component {
