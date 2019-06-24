@@ -10,13 +10,20 @@ class ResolveThread extends Component {
     handleSubmit=(e)=>{
         e.preventDefault();
         const formData=new FormData();
-        formData.append('statusList',this.state.statusList);
+        formData.append('statusList',this.state.resolve);
+        formData.append('issue_id', this.props.allComplaint.issue_id)
         this.props.resolveCommit(formData);
+    }
+    handleChange=(e)=>{
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
     render() {
         const {department, issue_id, assigned_to, name, status, email} = this.props.allComplaint;
 
         return (
+
             <tr>
                 <td>{department}</td>
                 <td>{issue_id}</td>
@@ -26,7 +33,7 @@ class ResolveThread extends Component {
                 {(this.props.statusSelect && status !== 'Closed') ?
                     <React.Fragment>
                         <td>
-                            <select>
+                            <select onChange={this.handleChange} name={'resolve'} value={status}>
                                 {this.state.statusList.map((status) => {
                                     return (
                                         <option value={status}>{status}</option>
@@ -35,7 +42,7 @@ class ResolveThread extends Component {
                             </select>
                         </td>
                         <td>
-                            <button onSubmit={this.handleSubmit} value={this.state.statusList}> Commit </button>
+                            <button onClick={this.handleSubmit} > Commit</button>
                         </td>
                     </React.Fragment>
                     :
