@@ -44,14 +44,15 @@ export const resolveCommit=(formData)=>dispatch=>{
     axiosInstance({
         method:'post',
         url:"http://localhost:8080/dashboard/resolve/myComplaint",
-        data:formData
+        data:formData})
             .then(res=>{
-                dispatch(addCommitToState(res.data))
+                const updatedStatus = formData.get('statusList');
+                const issue_id = formData.get('issue_id');
+                dispatch(addCommitToState({updatedStatus, issue_id}))
             })
             .catch((err)=>{
                 console.log(err);
             })
-    })
 }
 
 const addCommitToState=(data)=>
