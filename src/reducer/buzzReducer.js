@@ -2,7 +2,8 @@ const InitialState={
     buzzPost:[]
 }
 
-const buzzReducer = (state = InitialState, action) => {
+const
+    buzzReducer = (state = InitialState, action) => {
     switch (action.type) {
         case "BUZZ_POST": {
             const newBuzz = [...state.buzzPost];
@@ -13,7 +14,9 @@ const buzzReducer = (state = InitialState, action) => {
             //     buzzPost:[...state.buzzPost, action.data]};
         }
         case "SHOW_POST":{
-            return { ...state,
+            // const morePost = state.buzzPost.concat(...action.data);
+            return {
+                ...state,
                 buzzPost:action.data
             };
         }
