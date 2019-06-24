@@ -1,16 +1,16 @@
 import React,{Component} from 'react';
 import './style.css';
-import ttnlogo from '../../assets/ttnlogo.png'
+import ttnlogo1 from '../../assets/ttnlogo1.png'
 
 export default class Login extends Component{
     render(){
         return(
-            <div className='container'>
+            <div className='container1'>
                 <div className='innerContainer'>
-                    <img src={ttnlogo} alt="image"/>
+                    <img src={ttnlogo1} alt="image"/>
                     <p>Create your own buzz</p>
-                    <a href="http://localhost:8080/auth/google">
-                        Login with Google
+                    <a className='loginClick' href="http://localhost:8080/auth/google">
+                        <i className="fa fa-google-plus" aria-hidden="true"></i>     Login with Google
                     </a>
                 </div>
             </div>

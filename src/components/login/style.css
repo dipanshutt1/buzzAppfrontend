@@ -1,10 +1,10 @@
-.container{
+.container1{
     height: 100vh;
     /*background-repeat: no-repeat;*/
     /*background-size: cover;*/
     position: relative;
 }
-.container:after{
+.container1:after{
     background: url("../../assets/login_banner.jpg");
     position: absolute;
     z-index: -1;
@@ -28,11 +28,15 @@
     transform:translate(-50%,-50%);
     padding: 10px 40px 40px 40px;
 }
-a{
+.loginClick{
     text-decoration: none;
     color: #ffffff;
     border: #1733ff 2px solid;
     border-radius: 20px;
     background-color: #1733ff;
-    padding: 5px 20px;
+    padding: 5px 25px;
+}
+.loginClick:hover{
+    color: #fff;
+    text-decoration: none;
 }
