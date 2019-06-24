@@ -42,35 +42,47 @@ class BuzzForm extends Component {
     render() {
         return (
             <div>
-                <form className='buzzForm'
+                <form
                       onSubmit={this.handleSubmit}
                       action='http://localhost:8080/dashboard/buzz'
                       method="POST"
                       encType={'multipart/form-data'}
                       >
-                    <label className='label' htmlFor="create buzz">Create Buzz</label>
-                    <textarea className='buzzContent' name='buzzContent'
-                              placeholder={'Create your buzz here!!!!!'}
-                              value={this.state.buzzContent}
-                              onChange={this.handleChange}
-                              cols="45"
-                              rows="10"
-                    />
-                    <div className='fromWrapper'>
-                        <input type="file"
-                               name='image'
-                               accept='image/*'
-                               onChange={this.handleFileUpload}
-                        />
-                        <select name={'category'} onChange={this.handleChange}>
-                            <option value={'activity'}>Activity</option>
-                            <option value={'LostFound'}>Lost & Found</option>
-                        </select>
+                    <div className="form-row">
+                        <label htmlFor="create buzz">Create Buzz</label>
                     </div>
+                    <div>
+                        <textarea name='buzzContent'
+                                  placeholder={'Create your buzz here!!!!!'}
+                                  value={this.state.buzzContent}
+                                  onChange={this.handleChange}
+                                  className="form-control"
+                                  rows="7"
 
-                    <input className='btn' type={'submit'}
-                           value={'POST'}
-                    />
+                        />
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <input type="file"
+                                   name='image'
+                                   accept='image/*'
+                                   onChange={this.handleFileUpload}
+                                   height="200px"
+                            />
+                        </div>
+                        <div className="form-group col-md-6">
+                            <select name={'category'} className="form-control   " onChange={this.handleChange}>
+                                <option value={'activity'}>Activity</option>
+                                <option value={'LostFound'}>Lost & Found</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div className="form-row">
+                        <input type={'submit'}
+                               value={'POST'}
+                        />
+                    </div>
                 </form>
             </div>
         );
