@@ -24,7 +24,7 @@ class Dashboard extends Component {
                 <header>
                     <nav className='navbarLogout'>
                         <img src={ttnlogo} alt="image/*"/>
-                        <i onClick={this.logout} className="fa fa-sign-out fa-3x" aria-hidden="true"></i>
+                        <i onClick={this.logout} className="fa fa-sign-out fa-2x" aria-hidden="true"></i>
                     </nav>
                     <div id="carouselExampleSlidesOnly" className="carouselBanner carousel slide" data-ride="carousel">
                         <div className="carousel-inner">
@@ -42,9 +42,8 @@ class Dashboard extends Component {
                 </header>
                 <main>
                     <aside>
-                        <Menu/>
                         <User/>
-
+                        <Menu/>
                     </aside>
                     <section>
                         <Route
