@@ -7,7 +7,7 @@ class ResolveThread extends Component {
     state = {
         statusList: ['Open', 'Active', 'Closed']
     };
-    handleSubmit=(e)=>{
+    handleClick=(e)=>{
         e.preventDefault();
         const formData=new FormData();
         formData.append('statusList',this.state.resolve);
@@ -42,7 +42,7 @@ class ResolveThread extends Component {
                             </select>
                         </td>
                         <td>
-                            <button onClick={this.handleSubmit} > Commit</button>
+                            <button onClick={this.handleClick} > Commit</button>
                         </td>
                     </React.Fragment>
                     :
