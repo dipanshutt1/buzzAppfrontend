@@ -6,7 +6,7 @@ class UserProfileThread extends Component {
         const{userName, userImg,email,department,userRole}=this.props.user
         return (
             <React.Fragment>
-                    <img className="img-thumbnail img-fluid rounded-circle" src={userImg}/>
+                    <img className="img-thumbnail img-fluid rounded-circle profileWrapper" src={userImg}/>
                     <div className="profileWrapper">
                         <h4 className="text-center">{userName}</h4>
                         <h6 className="text-center">{department}</h6>

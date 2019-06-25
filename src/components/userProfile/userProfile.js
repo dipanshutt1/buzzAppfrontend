@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import UserProfileThread from './userProfileThread';
 import {userProfile} from '../../action/userProfileAction';
-
+import './userProfile.css';
 
 class UserProfile extends Component {
     componentDidMount() {
