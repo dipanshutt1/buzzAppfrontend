@@ -16,3 +16,16 @@
 /*    display: flex;*/
 /*    justify-content: space-between;*/
 /*}*/
+
+.fa-pencil:before{
+    margin: 10px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+}
+

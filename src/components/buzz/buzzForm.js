@@ -48,10 +48,14 @@ class BuzzForm extends Component {
                       method="POST"
                       encType={'multipart/form-data'}
                       >
-                    <div className="form-row">
-                        <label htmlFor="create buzz">Create Buzz</label>
-                    </div>
+                    {/*<div className="form-row">*/}
+                    {/*</div>*/}
                     <div>
+                        <div className="form-row">
+                            <label htmlFor="create buzz">To The New Buzz  </label><i className="fa fa-pencil"
+                                                                                    aria-hidden="true"></i>
+
+                        </div>
                         <textarea name='buzzContent'
                                   placeholder={'Create your buzz here!!!!!'}
                                   value={this.state.buzzContent}
@@ -71,7 +75,7 @@ class BuzzForm extends Component {
                             />
                         </div>
                         <div className="form-group col-md-6">
-                            <select name={'category'} className="form-control   " onChange={this.handleChange}>
+                            <select name={'category'} className="form-control   " onChange={this.handleChange} name={'category'}>
                                 <option value={'activity'}>Activity</option>
                                 <option value={'LostFound'}>Lost & Found</option>
                             </select>

@@ -26,18 +26,17 @@ class BuzzPost extends Component {
 
     render() {
         console.log('heheke',this.props.data);
-        console.log('skip ',this.state.skip);
-        console.log('userpost are ',this.props.userPost.length);
+        // console.log('skip ',this.state.skip);
+        // console.log('userpost are ',this.props.userPost.length);
         return (
-            <div>
-                <ul>
+            <div className="buzz-list">
                     {this.props.userPost.map((data)=>{
                         console.log('my data is',data)
                         return(
                             <BuzzThread post={data}/>
                         )
                     })}
-                </ul>
+
 
                 {/*<InfiniteScroll*/}
                 {/*pageStart={0}*/}
