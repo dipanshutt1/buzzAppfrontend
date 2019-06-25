@@ -8,29 +8,23 @@ class Menu extends Component {
         console.log('Menu Render',this.props.user.userProfile);
         return (
             <div className="menu">
-                    <button className="myBtn btn-outline-primary btn btn-block">
-                        <Link to="/dashboard/buzz">
+
+                        <Link className=" myBtn buzz myBtn1" to="/dashboard/buzz">
                             Buzz
                         </Link>
-                    </button>
-                    <button className="myBtn btn btn-outline-primary btn-block">
-                        <Link to="/dashboard/complaint">
+                        <Link className="myBtn buzz myBtn1"to="/dashboard/complaint">
                             Complaint
                         </Link>
-                    </button>
-                    {this.props.user.userProfile.userRole === 'USER' ? null : <button className="myBtn btn btn-outline-primary btn-block">
-                        <Link to="/dashboard/resolve">
+                    {this.props.user.userProfile.userRole === 'USER' ? null :
+                        <Link className ="myBtn buzz myBtn1"to="/dashboard/resolve">
                             Resolve
                         </Link>
-                    </button>}
+                    }
                     {this.props.user.userProfile.userRole==='USER' ? null :
-                    <button className="myBtn btn btn-outline-primary btn-block">
-                        <Link to="/dashboard/allUser">
+                        <Link className="myBtn buzz myBtn1"to="/dashboard/allUser">
                             All Users
                         </Link>
-                    </button>}
-
-
+                    }
             </div>
         )
     }

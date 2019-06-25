@@ -1,5 +1,27 @@
-.myBtn:hover {
-    color: #fff;
-    background: #1733ff;
+
+.myBtn{
+    background-color: #ffffff;
+    color: #4631ff;
+    text-align: center;
+    display: block;
+    border: 2px solid #4631ff;
+    border-radius: 12px;
+    width:100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: none;
+}
+.myBtn1:hover{
+    background-color: #4631ff;
+    color: white;
     text-decoration: none;
+}
+.buzz{
+    text-decoration: none;
+    padding: 15px 0;
+    outline: none;
+}
+.buzz:hover{
+    color: white;
+     text-decoration: none;
 }
