@@ -18,15 +18,17 @@ class AllUserDetails extends Component {
                             <th scope='col'>User Name</th>
                             <th scope='col'>Role</th>
                             <th scope='col'>Email</th>
+                            <th scope='col'>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                    {this.props.allUserData.map((data)=>{
-                        console.log('jjjjjj',data)
-                        return (
-                            <AllUserThread user={data}/>
-                        )
-                    })}
+                        {this.props.allUserData.map((data)=>{
+                            console.log('jjjjjj',data)
+                            return (
+                                <AllUserThread user={data}/>
+                            )
+                        })}
+
                     </tbody>
                 </table>
             </div>
