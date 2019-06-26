@@ -9,19 +9,19 @@ class Menu extends Component {
         return (
             <div className="menu">
 
-                        <Link className=" myBtn buzz myBtn1" to="/dashboard/buzz">
+                        <Link className=" myBtn buzz" to="/dashboard/buzz">
                             Buzz
                         </Link>
-                        <Link className="myBtn buzz myBtn1"to="/dashboard/complaint">
+                        <Link className="myBtn buzz"to="/dashboard/complaint">
                             Complaint
                         </Link>
                     {this.props.user.userProfile.userRole === 'USER' ? null :
-                        <Link className ="myBtn buzz myBtn1"to="/dashboard/resolve">
+                        <Link className ="myBtn buzz"to="/dashboard/resolve">
                             Resolve
                         </Link>
                     }
                     {this.props.user.userProfile.userRole==='USER' ? null :
-                        <Link className="myBtn buzz myBtn1"to="/dashboard/allUser">
+                        <Link className="myBtn buzz"to="/dashboard/allUser">
                             All Users
                         </Link>
                     }
