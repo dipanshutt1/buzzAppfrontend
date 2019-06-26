@@ -19,10 +19,10 @@ class BuzzThread extends Component {
                     </div>
                 <div className="card-body">
                     <div>
-                        <span style={{background:"#7DD2F9",padding:"10px",color:"white",fontWeight:"700",borderRadius:"5px"}} className='card-content'>{category}</span>
+                        <span style={{background:"#4631ff",padding:"10px",color:"white",fontWeight:"700",borderRadius:"5px"}} className='card-content'>{category}</span>
                     </div>
                     <div className=''>
-                            <div style={{paddding:"0px"}}>{content}</div>
+                            <div style={{margin:"10px"}}>{content}</div>
 
                         {/*<li className='buzz-description'>{description}</li>*/}
                         <img src={imageUrl} style={{borderRadius:"5px", width:"500px"}} className="card-img-bottom" alt="" height="auto" />

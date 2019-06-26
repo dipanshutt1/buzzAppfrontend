@@ -52,9 +52,7 @@ class BuzzForm extends Component {
                     {/*</div>*/}
                     <div>
                         <div className="form-row">
-                            <label htmlFor="create buzz">To The New Buzz  </label><i className="fa fa-pencil"
-                                                                                    aria-hidden="true"></i>
-
+                            <label  style={{background:"#4631ff",padding:"10px",color:"white",fontWeight:"700",borderRadius:"5px"}} htmlFor="create buzz">To The New Buzz  </label><i className="fa fa-pencil fa-2x     "></i>
                         </div>
                         <textarea name='buzzContent'
                                   placeholder={'Create your buzz here!!!!!'}
@@ -67,7 +65,11 @@ class BuzzForm extends Component {
                     </div>
                     <div className="form-row">
                         <div className="form-group col-md-6">
+                            <label htmlFor="fav-upload"><i className="fa fa-upload fa-2x" aria-hidden="true"></i>
+                            </label>
                             <input type="file"
+                                   className="fileupload"
+                                    id="fav-upload"
                                    name='image'
                                    accept='image/*'
                                    onChange={this.handleFileUpload}
@@ -75,9 +77,9 @@ class BuzzForm extends Component {
                             />
                         </div>
                         <div className="form-group col-md-6">
-                            <select name={'category'} className="form-control   " onChange={this.handleChange} name={'category'}>
-                                <option value={'activity'}>Activity</option>
-                                <option value={'LostFound'}>Lost & Found</option>
+                            <select name={'category'} className="form-control myBtn myBtn1" onChange={this.handleChange} name={'category'}>
+                                <option value={'Activity'}>Activity</option>
+                                <option value={'Lost & Found'}>Lost & Found</option>
                             </select>
                         </div>
 
@@ -85,6 +87,7 @@ class BuzzForm extends Component {
                     <div className="form-row">
                         <input type={'submit'}
                                value={'POST'}
+                               className="myBtn"
                         />
                     </div>
                 </form>

@@ -28,4 +28,15 @@
     display: flex;
     justify-content: space-between;
 }
-
+input[type=file]{
+    display: none;
+}
+.fa-upload{
+    padding: 10px;
+    color: #4631ff;
+}
+.myBtn1{
+    outline: none;
+    padding: 0px;
+    margin: 10px;
+}
