@@ -20,15 +20,11 @@ class Menu extends Component {
                         Resolve
                     </Link>
                 }
-                {this.props.user.userProfile.userRole === 'IT' ? <Link className="myBtn buzz" to="/dashboard/allUser">
-                    All Users
-                </Link> : null
-                }
-
-                {this.props.user.userProfile.userRole === 'USER' ? null :
+                {this.props.user.userProfile.userRole === 'IT' ?
                     <Link className="myBtn buzz" to="/dashboard/allUser">
                         All Users
-                    </Link>
+                    </Link>: null
+
                 }
             </div>
         )
