@@ -43,13 +43,14 @@ class ResolveComplaint extends Component {
                             <th scope='col'>Assign To</th>
                             <th scope='col'>Locked By</th>
                             <th scope='col'>Status</th>
+                            <th scope='col'>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     {this.props.Complaint.map((data)=>{
                         return(
                             <ResolveThread allComplaint={data} statusSelect={this.state.complaintFilter === 'my'}/>
-                        )
+                            )
                     })}
                     </tbody>
                 </table>
