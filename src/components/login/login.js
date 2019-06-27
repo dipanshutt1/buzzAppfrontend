@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './style.css';
-import ttnlogo1 from '../../assets/ttnlogo1.png'
+import ttnlogo1 from '../../assets/ttnlogo.png'
 
 export default class Login extends Component{
     render(){
