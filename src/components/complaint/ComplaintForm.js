@@ -72,13 +72,18 @@ class ComplaintForm extends Component {
                                   onChange={this.handleChange}
                                   value={this.state.concern} />
                     </div>
-                    <div className="form-row wrapper">
+                    <div className="form-row">
                         <div className="form-group col-md-6">
+                            <label htmlFor="fav-upload"><i className="fa fa-upload fa-2x" aria-hidden="true"></i>
+                            </label>
                             <input type="file"
+                                   className="fileupload"
+                                   id="fav-upload"
                                    name='image'
                                    accept='image/*'
                                    onChange={this.handleFileUpload}
-                            />
+                                   height="200px"
+                                    />
                         </div>
                         <div className="form-group col-md-6">
                             <input type="submit"

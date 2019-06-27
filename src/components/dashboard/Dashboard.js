@@ -41,7 +41,7 @@ class Dashboard extends Component {
                     </div>
                 </header>
                 <main>
-                    <aside>
+                    <aside className={"col-lg-3"}>
                         <User/>
                         <Menu/>
                     </aside>
@@ -58,11 +58,11 @@ class Dashboard extends Component {
                             exact path="/dashboard/resolve"
                             component={Resolve}
                         />}
-                        {this.props.user.userProfile.userRole==='USER' ? null :
-                            <Route
-                                exact path="/dashboard/allUser"
-                                component={AllUser}
-                            />}
+                        {this.props.user.userProfile.userRole==='IT' ? <Route
+                            exact path="/dashboard/allUser"
+                            component={AllUser}
+                        /> : null
+                            }
                     </section>
                 </main>
             </div>

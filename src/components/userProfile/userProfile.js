@@ -12,10 +12,8 @@ class UserProfile extends Component {
     render() {
         console.log(`hello ${JSON.stringify(this.props.userProfileData)}`);
         return (
-            <div>
-                <ul>
+            <div style={{marginBottom:"20px"}}>
                     <UserProfileThread user={this.props.userProfileData}/>
-                </ul>
             </div>
         );
     }

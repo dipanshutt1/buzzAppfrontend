@@ -1,3 +1,12 @@
 .profileWrapper{
     text-align: center;
+    color: white;
+}
+.userProfile{
+    border:solid 2px #1733ff;
+    border-radius: 10px;
+    background-color: #3f34ff;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
 }

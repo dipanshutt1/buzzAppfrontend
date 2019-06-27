@@ -10,7 +10,7 @@ export default class Login extends Component{
                     <img src={ttnlogo1} alt="image"/>
                     <p>Create your own buzz</p>
                     <a className='loginClick' href="http://localhost:8080/auth/google">
-                        <i className="fa fa-google-plus" aria-hidden="true"></i>     Login with Google
+                        <i className="fa fa-google-plus" aria-hidden="true"></i>Login with Google
                     </a>
                 </div>
             </div>

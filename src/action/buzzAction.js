@@ -29,10 +29,10 @@ const addBuzzPostToState=(data)=>
         data
 
 });
-export const showBuzz=()=> dispatch => {
+export const showBuzz=(skip)=> dispatch => {
     axiosInstance({
         method:'get',
-        url:'http://localhost:8080/dashboard/buzz',
+        url:`http://localhost:8080/dashboard/buzz/${skip}`,
         config: {
             headers:{
                 'Content-Type':'multipart/form-data'

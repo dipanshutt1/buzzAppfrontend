@@ -14,10 +14,10 @@ const
             //     buzzPost:[...state.buzzPost, action.data]};
         }
         case "SHOW_POST":{
-            // const morePost = state.buzzPost.concat(...action.data);
+            const morePost = state.buzzPost.concat(...action.data);
             return {
                 ...state,
-                buzzPost:action.data
+                buzzPost:morePost
             };
         }
         default: {
