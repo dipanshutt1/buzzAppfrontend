@@ -4,33 +4,29 @@ import {resolveUserStatus,allUser} from "../../action/allUserAction";
 
 class AllUserThread extends Component {
     state={
-        userAction:['Activate','Deactivate'],
         resolve:'Activate'
     };
     componentDidMount() {
-        this.props.allUser();
+        // this.props.resolveUserStatus();
+        // this.props.allUser();
     }
 
-    handleClick=(e)=>{
+    handleClick=(e,googleId)=>{
         e.preventDefault();
-        const formData=new FormData;
+        const formData=new FormData();
         formData.append('resolve',this.state.resolve);
-        formData.append('googleId',this.props.allUser.googleId);
-
+        formData.append('googleId',googleId);
+        console.log(`Google Id ${googleId}`);
         this.props.resolveUserStatus(formData);
-
-
-    }
+    };
     handleChange=(e)=>{
         this.setState({
             [e.target.name]: e.target.value,
         });
-        this.props.resolveUserStatus();
-
     };
     render() {
         console.log('deoeoaoao',this.props.user);
-        const{userName, userImg,email,department,userRole}=this.props.user
+        const{userName, userImg,email,department,userRole,googleId}=this.props.user
         return (
             <tr>
                 <td>{userName}</td>
@@ -42,7 +38,7 @@ class AllUserThread extends Component {
                         <option value="Deactivate">Deactivate</option>
                     </select>
                 </td>
-                <button onClick={this.handleClick}>Commit</button>
+                <button style={{marginTop:"10px"}} onClick={(e) =>this.handleClick(e, googleId)}>Commit</button>
             </tr>
         );
     }
@@ -54,6 +50,5 @@ const mapStateToProps=(state)=> {
 }
 const mapDispatchToProps={
     resolveUserStatus,
-    allUser
 }
 export default connect(mapStateToProps,mapDispatchToProps)(AllUserThread);
