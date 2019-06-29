@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {addComplaint} from "../../action/complaintAction";
 import {connect} from 'react-redux';
+import swal from 'sweetalert';
 
 class ComplaintForm extends Component {
     constructor(props){
@@ -41,21 +42,28 @@ class ComplaintForm extends Component {
             image:''
         })
     }
+    handleSweetAlert=(e)=>{
+        swal({
+            text: "Your complaint has been locked",
+            icon: "success",
+            button: "Okay!",
+        });
+    }
     render() {
         return (
-            <div className="formContainer">
+            <div className="form-component">
                 <form onSubmit={this.handleSubmit}>
                     <div className='form-row'>
                         <div className='form-group col-md-6'>
-                            <label htmlFor="department">Select Department</label>
-                            <select name={'department'} classname="form-control" onChange={this.handleChange}>
+                            <label htmlFor="department" className="form-label" style={{width:"100%"}}>Select Department</label>
+                            <select name={'department'} style={{margin:"0"}} className="form-control myBtn1 myBtn" onChange={this.handleChange}>
                                 <option value={'IT'}>IT</option>
                                 <option value={'INFRASTRUCTURE'}>INFRASTRUCTURE</option>
                                 <option value={'HR'}>HR</option>
                             </select>
                         </div>
                         <div className='form-group col-md-6'>
-                            <label htmlFor="title">Title</label>
+                            <label htmlFor="title" className="form-label" style={{width:"100%"}}>Title</label>
                             <input type="text"
                                    className="form-control"
                                    name={'title'}
@@ -64,9 +72,11 @@ class ComplaintForm extends Component {
                         </div>
                     </div>
                     <div className='form-group'>
-                        <label htmlFor="concern">Your Concern</label>
+                        <label htmlFor="concern" className="form-label">Your Concern</label>
                         <textarea name={'concern'}
                                   className="form-control"
+                                  style={{outline:"none"}}
+
                                   // cols="30"
                                   rows="5"
                                   onChange={this.handleChange}
@@ -75,7 +85,7 @@ class ComplaintForm extends Component {
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <label htmlFor="fav-upload"><i className="fa fa-upload fa-2x" aria-hidden="true"></i>
-                            </label>
+                            Choose file..</label>
                             <input type="file"
                                    className="fileupload"
                                    id="fav-upload"
@@ -86,7 +96,7 @@ class ComplaintForm extends Component {
                                     />
                         </div>
                         <div className="form-group col-md-6">
-                            <input type="submit"
+                            <input className="myBtn myBtn1" style={{padding:"10px"}} type="submit" onClick={this.handleSweetAlert}
                                    value={'POST'}/>
                         </div>
                     </div>

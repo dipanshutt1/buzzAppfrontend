@@ -11,7 +11,7 @@ class ComplaintPost extends Component {
     render() {
         return (
             <div className='complaint-list'>
-                <div className='complaint-title'>Your Complaints</div>
+                <div className='complaint-title form-label' style={{marginBottom:"10px"}}>Your Complaints</div>
                     <table className="table table-striped">
                         <thead className="thead-dark">
                             <tr>
