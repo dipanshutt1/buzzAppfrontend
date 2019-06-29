@@ -30,8 +30,8 @@ class ResolveComplaint extends Component {
         console.log('resolve props',this.props.data);
         return (
             <div>
-                <div>Complaints</div>
-                <select name="complaintFilter" onChange={this.handleChange}>
+                <div className="form-label form-component">Complaints</div>
+                <select name="complaintFilter" style={{padding:"10px",width:"40%"}} className="myBtn myBtn1" onChange={this.handleChange}>
                     <option value="all">All</option>
                     <option value="my">My</option>
                 </select>
