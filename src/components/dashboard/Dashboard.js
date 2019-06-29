@@ -7,7 +7,6 @@ import Buzz from '../buzz/Buzz';
 import User from '../userProfile/user'
 import './dashboard.css'
 import {connect} from "react-redux";
-import banner from '../../assets/banner.jpeg'
 import AllUser from "../allUser/allUser";
 import ttnlogo from '../../assets/ttnlogo.png';
 import banner2 from '../../assets/banner2.jpg';
@@ -25,7 +24,7 @@ class Dashboard extends Component {
                 <header>
                     <nav className='navbarLogout '>
                         <a href="https://www.tothenew.com"><img src={ttnlogo} alt="image/*"/></a>
-                        <i onClick={this.logout} style ={{color:'blue'}}className="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+                        <i onClick={this.logout} style ={{color:'#091341'}}className="fa fa-sign-out fa-2x" aria-hidden="true"></i>
                     </nav>
                         <div>
                             <img className="bannerItem d-block w-100" src={banner2} accept='image/*'></img>
