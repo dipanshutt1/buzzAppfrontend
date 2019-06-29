@@ -1,12 +1,28 @@
-.profileWrapper{
+.img-thumbnail{
+    height:150px;
+    width: 150px;
+}
+.innerBox{
     text-align: center;
     color: white;
-}
-.userProfile{
-    border:solid 2px #1733ff;
-    border-radius: 10px;
-    background-color: #3f34ff;
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-top: 50px;
+}
+
+.userProfile{
+    display: table;
+    margin-top: 25px;
+    width: 100%;
+    height: 350px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image:url(http://bit.ly/2gPLxZ4);
+    border-radius: 15px;
+}
+
+h4{
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 700;
 }
