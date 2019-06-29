@@ -5,6 +5,8 @@ import {Redirect, Route, BrowserRouter as Router} from "react-router-dom";
 import Dashboard from "./components/dashboard/Dashboard";
 import TokenComponent from './components/Token'
 import User from "./components/userProfile/user";
+import AccountError from './components/Error/AccountError';
+
 export default class App extends Component {
   render() {
      return (
@@ -12,6 +14,7 @@ export default class App extends Component {
             <Router>
                 <Route exact path={'/'} component={Login}/>
                 <Route path={'/token'} component={TokenComponent}/>
+                <Route path={'/accountError'} component={AccountError}/>
                 <PrivateRoute path={'/dashboard'} component={Dashboard}/>
             </Router>
         </div>
