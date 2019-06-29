@@ -1,21 +1,27 @@
 
 .myBtn{
     background-color: #ffffff;
-    color: #4631ff;
+    color: #091341;
     text-align: center;
     display: block;
-    border: 2px solid #4631ff;
+    border: 2px solid #091341;
     border-radius: 12px;
     width:100%;
     padding: 10px;
     margin-bottom: 10px;
     outline: none;
 }
+.myBtn span{
+    display: inline-block;
+    text-align: center;
+    width: 146px;
+}
 .myBtn:hover{
-    background-color: #4631ff;
+    background-color: #091341;
     color: white;
     text-decoration: none;
     font-weight: 900;
+    outline:none;
 }
 .buzz{
     text-decoration: none;
