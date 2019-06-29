@@ -1,10 +1,15 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import './style.css';
 import ttnlogo1 from '../../assets/ttnlogo.png'
+import TokenComponent from '../Token';
 
-export default class Login extends Component{
-    render(){
-        return(
+export default class Login extends Component {
+    componentDidMount() {
+        localStorage.getItem('token') && this.props.history.push('/dashboard/buzz')
+    }
+
+    render() {
+        return (
             <div className='container1'>
                 <div className='innerContainer'>
                     <img src={ttnlogo1} alt="image"/>
