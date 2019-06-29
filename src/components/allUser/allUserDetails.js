@@ -11,9 +11,9 @@ class AllUserDetails extends Component {
     render() {
         // console.log('jerry',this.props.allUserData)
         return (
-            <div className="">
+            <div className="form-component">
                 <table className="table table-striped">
-                    <thead className="thead-dark">
+                    <thead className="thead-dark" >
                         <tr>
                             <th scope='col'>User Name</th>
                             <th scope='col'>Role</th>
