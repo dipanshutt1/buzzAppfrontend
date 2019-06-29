@@ -10,6 +10,7 @@ import {connect} from "react-redux";
 import banner from '../../assets/banner.jpeg'
 import AllUser from "../allUser/allUser";
 import ttnlogo from '../../assets/ttnlogo.png';
+import banner2 from '../../assets/banner2.jpg';
 
 class Dashboard extends Component {
 
@@ -22,24 +23,14 @@ class Dashboard extends Component {
         return (
             <div>
                 <header>
-                    <nav className='navbarLogout'>
-                        <img src={ttnlogo} alt="image/*"/>
-                        <i onClick={this.logout} className="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+                    <nav className='navbarLogout '>
+                        <a href="https://www.tothenew.com"><img src={ttnlogo} alt="image/*"/></a>
+                        <i onClick={this.logout} style ={{color:'blue'}}className="fa fa-sign-out fa-2x" aria-hidden="true"></i>
                     </nav>
-                    <div id="carouselExampleSlidesOnly" className="carouselBanner carousel slide" data-ride="carousel">
-                        <div className="carousel-inner">
-                            <div className="carousel-item active">
-                                <img className="bannerItem d-block w-100" src={banner} accept='image/*'></img>
-                            </div>
-                            <div className="carousel-item">
-                                <img className="bannerItem d-block w-100" src={banner} accept='image/*'></img>
-                            </div>
-                            <div className="carousel-item">
-                                <img className="bannerItem d-block w-100" src={banner} accept='image/*'></img>
-                            </div>
+                        <div>
+                            <img className="bannerItem d-block w-100" src={banner2} accept='image/*'></img>
                         </div>
-                    </div>
-                </header>
+            </header>
                 <main>
                     <aside className={"col-lg-3"}>
                         <User/>
