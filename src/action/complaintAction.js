@@ -1,25 +1,24 @@
 import axiosInstance from '../utils/axiosInterceptor';
+import {successAlert,errorAlert} from "./actionAlert";
 
 export const addComplaint=(complaintData)=>dispatch=>{
     axiosInstance({
         method:'post',
         url:'http://localhost:8080/dashboard/complaint',
         data:complaintData
-        // config:{
-        //     header:{
-        //         'Content-Type':'multipart/form-data'
-        //     }
-        // }
     })
         .then(res=>{
             console.log(`response ${Object.keys(res)}`)
             if(res.data.message='data storage done'){
                 console.log(`hehehe ${JSON.stringify(res.data.data)}`);
                 dispatch(addComplaintToState(res.data.data))
+                successAlert("Your complaint has been locked!!")
             }
-        }).catch((err)=>{
-            console.log(err);
-    })
+        }).catch(err=>{
+            console.log('hello error',err);
+            errorAlert("Some error occured while registering the complaint!!")
+        }
+    )
 }
 
 export const addComplaintToState=(data)=>{
@@ -38,9 +37,12 @@ export const showComplaint=()=> dispatch => {
         .then(res=>{
             console.log("res data",res.data);
             dispatch(showComplaintPostToState(res.data))
-        }).catch((err) => {
-            console.error(err);
-    })
+
+        }).catch(res=>{
+            console.log("show complaint error is ",res.err);
+            errorAlert("Some error occured. Please try after some time!")
+        }
+    )
 }
 export const showComplaintPostToState=(data)  =>{
     return {
