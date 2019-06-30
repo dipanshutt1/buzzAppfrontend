@@ -1,4 +1,5 @@
 import axiosInstance from '../utils/axiosInterceptor';
+import {successAlert,errorAlert} from "./actionAlert";
 
 export const showAllComplaint=()=> dispatch=>{
     axiosInstance({
@@ -13,6 +14,10 @@ export const showAllComplaint=()=> dispatch=>{
         .then(res=>{
             console.log('res data is',res.data)
             dispatch(showComplaintToState(res.data))
+        })
+        .catch(err=>{
+            console.log("some error occured",err);
+            errorAlert("Some error occured !")
         })
 };
 
@@ -38,6 +43,9 @@ export const showMyComplaint=()=> dispatch=>{
             console.log('res data is',res.data);
             dispatch(showComplaintToState(res.data))
         })
+        .catch(err=>{
+            errorAlert("Some error occured !")
+        })
 };
 
 export const resolveCommit=(formData)=>dispatch=>{
@@ -49,9 +57,11 @@ export const resolveCommit=(formData)=>dispatch=>{
                 const updatedStatus = formData.get('statusList');
                 const issue_id = formData.get('issue_id');
                 dispatch(addCommitToState({updatedStatus, issue_id}))
+                successAlert('The status of your complaint has been changed!')
             })
             .catch((err)=>{
                 console.log(err);
+                errorAlert("Unable to update your complaint status. Please try after sometime!")
             })
 }
 
