@@ -1,10 +1,11 @@
 import axiosInstance from '../utils/axiosInterceptor';
 import {successAlert,errorAlert} from "./actionAlert";
+import {RESOLVE_MY_COMPLAINT_URL, RESOLVE_URL} from "../constants/actionUrl";
 
 export const showAllComplaint=()=> dispatch=>{
     axiosInstance({
         method:'get',
-        url:'http://localhost:8080/dashboard/resolve',
+        url:`${RESOLVE_URL}`,
         config:{
             headers:{
                 'Content-Type':'multipart/form-data'
@@ -32,7 +33,7 @@ export const showMyComplaint=()=> dispatch=>{
     console.log('hello');
     axiosInstance({
         method:'get',
-        url:'http://localhost:8080/dashboard/resolve/myComplaint',
+        url:`${RESOLVE_MY_COMPLAINT_URL}`,
         config:{
             headers:{
                 'Content-Type':'multipart/form-data'
@@ -51,7 +52,7 @@ export const showMyComplaint=()=> dispatch=>{
 export const resolveCommit=(formData)=>dispatch=>{
     axiosInstance({
         method:'post',
-        url:"http://localhost:8080/dashboard/resolve/myComplaint",
+        url:`${RESOLVE_MY_COMPLAINT_URL}`,
         data:formData})
             .then(res=>{
                 const updatedStatus = formData.get('statusList');

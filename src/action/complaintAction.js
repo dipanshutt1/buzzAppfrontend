@@ -1,10 +1,11 @@
 import axiosInstance from '../utils/axiosInterceptor';
 import {successAlert,errorAlert} from "./actionAlert";
+import {COMPLAINT_URL} from "../constants/actionUrl";
 
 export const addComplaint=(complaintData)=>dispatch=>{
     axiosInstance({
         method:'post',
-        url:'http://localhost:8080/dashboard/complaint',
+        url:`${COMPLAINT_URL}`,
         data:complaintData
     })
         .then(res=>{
@@ -32,7 +33,7 @@ export const addComplaintToState=(data)=>{
 export const showComplaint=()=> dispatch => {
     axiosInstance({
         method:'get',
-        url:'http://localhost:8080/dashboard/complaint',
+        url:`${COMPLAINT_URL}`,
     })
         .then(res=>{
             console.log("res data",res.data);

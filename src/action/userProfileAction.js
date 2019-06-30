@@ -1,9 +1,10 @@
 import axiosInstance from '../utils/axiosInterceptor';
+import {USER_PROFILE_URL} from "../constants/actionUrl";
 
 export const userProfile=()=>dispatch=>{
     axiosInstance({
         method:'get',
-        url:'http://localhost:8080/dashboard/userProfile'
+        url:`${USER_PROFILE_URL}`
     })
         .then(res=>{
             dispatch(userProfileToState(res.data))
