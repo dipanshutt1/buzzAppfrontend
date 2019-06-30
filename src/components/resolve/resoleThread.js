@@ -7,7 +7,7 @@ class ResolveThread extends Component {
     state = {
         statusList: ['Open', 'Active', 'Closed']
     };
-    handleClick=(e)=>{
+    handleClick= e =>{
         e.preventDefault();
         const formData=new FormData();
         formData.append('statusList',this.state.resolve);
