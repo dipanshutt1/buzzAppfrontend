@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {addComplaint} from "../../action/complaintAction";
 import {connect} from 'react-redux';
-import swal from 'sweetalert';
 
 class ComplaintForm extends Component {
     constructor(props){
@@ -42,13 +41,6 @@ class ComplaintForm extends Component {
             image:''
         })
     }
-    handleSweetAlert=(e)=>{
-        swal({
-            text: "Your complaint has been locked",
-            icon: "success",
-            button: "Okay!",
-        });
-    }
     render() {
         return (
             <div className="form-component">
@@ -65,8 +57,10 @@ class ComplaintForm extends Component {
                         <div className='form-group col-md-6'>
                             <label htmlFor="title" className="form-label" style={{width:"100%"}}>Title</label>
                             <input type="text"
+                                   style={{border:"2px solid #091341"}}
                                    className="form-control"
                                    name={'title'}
+                                   required={true}
                                    onChange={this.handleChange}
                                    value={this.state.title}/>
                         </div>
@@ -75,9 +69,8 @@ class ComplaintForm extends Component {
                         <label htmlFor="concern" className="form-label">Your Concern</label>
                         <textarea name={'concern'}
                                   className="form-control"
-                                  style={{outline:"none"}}
-
-                                  // cols="30"
+                                  style={{outline:"none",border:"2px solid #091341"}}
+                                  required={true}
                                   rows="5"
                                   onChange={this.handleChange}
                                   value={this.state.concern} />
@@ -96,7 +89,9 @@ class ComplaintForm extends Component {
                                     />
                         </div>
                         <div className="form-group col-md-6">
-                            <input className="myBtn myBtn1" style={{padding:"10px"}} type="submit" onClick={this.handleSweetAlert}
+                            <input className="myBtn myBtn1"
+                                   style={{padding:"10px"}}
+                                   type="submit"
                                    value={'POST'}/>
                         </div>
                     </div>
