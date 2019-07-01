@@ -1,6 +1,7 @@
 import axiosInstance from '../utils/axiosInterceptor';
 import {errorAlert,warningAlert} from "./actionAlert";
 import {ACCOUNT_STATUS_URL, ALL_USER_URL} from "../constants/actionUrl";
+import swal from "sweetalert";
 
 export const allUser=()=>dispatch=>{
     axiosInstance({
@@ -25,21 +26,30 @@ export const allUserToState=(data)=>{
 
 export const resolveUserStatus=(formData)=>dispatch=>{
     console.log(`formmmmms== ${formData.get('googleId')}`);
-    axiosInstance({
-        method: 'post',
-        url:`${ACCOUNT_STATUS_URL}`,
-        data:formData})
-        .then(res=>{
-            console.log('reached here');
-            const updatedStatus=formData.get('resolve');
-            const googleId=formData.get('googleId');
-            dispatch(addUserCommit({updatedStatus,googleId}))
-            warningAlert("Are your sure?")
-        })
-        .catch(err=>{
-            console.log(err);
-            errorAlert("Some error occured while changing the status of the user!")
-        })
+    warningAlert("Are your sure?").then((willDelete) => {
+        if (willDelete) {
+            swal("You have successfully deactivated this user!", {
+                icon: "success",
+            });
+            axiosInstance({
+                method: 'post',
+                url:`${ACCOUNT_STATUS_URL}`,
+                data:formData})
+                .then(res=>{
+                    console.log('reached here');
+                    const updatedStatus=formData.get('resolve');
+                    const googleId=formData.get('googleId');
+                    dispatch(addUserCommit({updatedStatus,googleId}))
+                })
+                .catch(err=>{
+                    console.log(err);
+                    errorAlert("Some error occured while changing the status of the user!")
+                })
+        } else {
+            swal("You haven't changed the status of the user");
+        }
+    })
+
     }
 const addUserCommit=(data)=>({
     type:'USER_ACTION_COMMIT',
