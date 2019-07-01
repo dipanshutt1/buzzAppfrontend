@@ -13,7 +13,7 @@ class AllUserDetails extends Component {
         return (
             <div className="form-component">
                 <table className="table table-striped">
-                    <thead className="thead-dark" >
+                    <thead className="thead-dark">
                         <tr>
                             <th scope='col'>User Name</th>
                             <th scope='col'>Role</th>
@@ -23,7 +23,9 @@ class AllUserDetails extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.allUserData.map((data)=>{
+                        {this.props.allUserData
+                            .filter((data) => data.email !== 'deepanshu@tothenew.com')
+                            .map((data)=>{
                             console.log('jjjjjj',data)
                             return (
                                 <AllUserThread user={data}/>

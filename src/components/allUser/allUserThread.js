@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {resolveUserStatus,allUser} from "../../action/allUserAction";
-
+import swal from 'sweetalert';
 class AllUserThread extends Component {
     state={
         resolve:'Activate'
@@ -24,6 +24,7 @@ class AllUserThread extends Component {
             [e.target.name]: e.target.value,
         });
     };
+
     render() {
         console.log('deoeoaoao',this.props.user);
         const{userName, userImg,email,department,userRole,googleId}=this.props.user
@@ -33,7 +34,7 @@ class AllUserThread extends Component {
                 <td>{userRole}</td>
                 <td>{email}</td>
                 <td>
-                    <select name="userActionfilter" onChange={this.handleChange} name={'resolve'}>
+                    <select name="userActionfilter" onChange={this.handleChange} value={this.props.user.status} name={'resolve'}>
                         <option value="Activate">Activate</option>
                         <option value="Deactivate">Deactivate</option>
                     </select>
