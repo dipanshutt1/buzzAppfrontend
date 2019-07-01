@@ -28,7 +28,7 @@ export const resolveUserStatus=(formData)=>dispatch=>{
     console.log(`formmmmms== ${formData.get('googleId')}`);
     warningAlert("Are your sure?").then((willDelete) => {
         if (willDelete) {
-            swal("You have successfully deactivated this user!", {
+            swal("You have successfully change the status of the user!", {
                 icon: "success",
             });
             axiosInstance({
