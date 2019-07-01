@@ -1,21 +1,3 @@
-/*.label{*/
-/*    display: block;*/
-/*    padding: 10px 0;*/
-/*}*/
-/*.buzzForm{*/
-/*    border: 2px solid grey;*/
-/*}*/
-/*.buzzContent{*/
-/*    display: block;*/
-/*}*/
-
-/*.btn{*/
-/*    display: block;*/
-/*}*/
-/*.fromWrapper{*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*}*/
 
 .fa-pencil:before{
     margin: 10px;
@@ -33,10 +15,41 @@ input[type=file]{
 }
 .fa-upload{
     padding: 10px;
-    color: #4631ff;
+    color: #091341;
+    cursor: pointer;
 }
 .myBtn1{
     outline: none;
     padding: 0px;
     margin: 10px;
+}
+.form-component{
+    margin: 25px;
+}
+.form-label{
+    background:#B6B4B0;
+    padding:10px;
+    color:black;
+    font-weight:400;
+    border-radius:5px;
+    text-align: center;
+    cursor: pointer;
+}
+.reactions{
+    font-size:18px;
+}
+.thumpsicon{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.liketext{
+    padding-left: 5px;
+}
+
+.profile{
+    display: flex;
+}
+.form-row{
+    margin-left: 0px;
+    margin-right: 0px;
 }

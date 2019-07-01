@@ -31,14 +31,6 @@ class BuzzPost extends Component {
         console.log('userpost are ',this.props.userPost.length);
         return (
             <div className="buzz-list">
-                    {/*{this.props.userPost.map((data)=>{*/}
-                    {/*    console.log('my data is',data)*/}
-                    {/*    return(*/}
-                    {/*     skip   <BuzzThread post={data}/>*/}
-                    {/*    )*/}
-                    {/*})}*/}
-
-
                 <InfiniteScroll
                 pageStart={0}
                 loadMore={this.handleLoading}

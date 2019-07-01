@@ -8,7 +8,7 @@ class BuzzForm extends Component {
         super(props);
         this.state={
             buzzContent:'',
-            category:'activity',
+            category:'Activity',
             image:''
         }
     }
@@ -30,7 +30,7 @@ class BuzzForm extends Component {
         this.props.addBuzz(formData);
         this.setState({
             buzzContent:'',
-            category:'activity',
+            category:'Activity',
             image:''
         })
     }
@@ -41,7 +41,7 @@ class BuzzForm extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="form-component">
                 <form
                       onSubmit={this.handleSubmit}
                       action='http://localhost:8080/dashboard/buzz'
@@ -52,21 +52,22 @@ class BuzzForm extends Component {
                     {/*</div>*/}
                     <div>
                         <div className="form-row">
-                            <label  style={{background:"#4631ff",padding:"10px",color:"white",fontWeight:"700",borderRadius:"5px"}} htmlFor="create buzz">To The New Buzz  </label><i className="fa fa-pencil fa-2x     "></i>
+                            <label className="form-label" htmlFor="create buzz">To The New Buzz  </label><i className="fa fa-pencil fa-2x     "></i>
                         </div>
-                        <textarea name='buzzContent'
+                        <textarea style={{border:"2px solid #091341"}}
+                                  name='buzzContent'
                                   placeholder={'Create your buzz here!!!!!'}
                                   value={this.state.buzzContent}
                                   onChange={this.handleChange}
                                   className="form-control"
                                   rows="7"
-
-                        />
+                                  required={true}
+                    />
                     </div>
                     <div className="form-row">
                         <div className="form-group col-md-6">
-                            <label htmlFor="fav-upload"><i className="fa fa-upload fa-2x" aria-hidden="true"></i>
-                            </label>
+                            <label htmlFor="fav-upload"><i className="fa fa-upload fa-2x" aria-hidden="true"style={{paddingTop:"15px"}}></i>
+                            Choose file..</label>
                             <input type="file"
                                    className="fileupload"
                                     id="fav-upload"
