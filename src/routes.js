@@ -8,6 +8,7 @@ import ErrorPage from './components/Error/ErrorPage'
 import Resolve from "./components/resolve/Resolve";
 import Buzz from "./components/buzz/Buzz";
 import Complaint from './components/complaint/complaint'
+import AllUser from "./components/allUser/allUser";
 
 export default class Routes extends Component {
     render() {
@@ -19,13 +20,8 @@ export default class Routes extends Component {
                     <Route exact path={'/token'} component={TokenComponent}/>
                     <Route exact path={'/accountError'} component={AccountError}/>
                     <PrivateRoute path={'/dashboard'} component={Dashboard}/>
-                    <Redirect
-                        to={
-                            {
-                                pathname: '/pagenotfound'
-                            }
-                        }
-                    />
+                    <Route path={'*'} component={ErrorPage} />
+
                 </Switch>
             </div>
         );
