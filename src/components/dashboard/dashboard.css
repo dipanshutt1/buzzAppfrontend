@@ -1,15 +1,14 @@
 body{
     background: #EFEEEC;
 }
-
 .navbarLogout{
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     width: 100%;
-    background: white;
     z-index: 999;
+    background: #ffffff;
 }
 .bannerItem{
     height: 400px;
