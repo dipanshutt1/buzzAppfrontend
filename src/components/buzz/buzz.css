@@ -18,6 +18,12 @@ input[type=file]{
     color: #091341;
     cursor: pointer;
 }
+.fa-thumbs-up{
+    color:#091341;
+}
+.fa-thumbs-down{
+    color: #091341;
+}
 .myBtn1{
     outline: none;
     padding: 0px;
