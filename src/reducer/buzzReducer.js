@@ -20,6 +20,20 @@ const
                 buzzPost:morePost
             };
         }
+        case "PUT_LIKE": {
+            const buzzLike = state.buzzPost.map((item) => action.data._id === item._id ? action.data : item);
+            return {
+                ...state,
+                buzzPost: buzzLike
+            }
+        }
+        case "PUT_DISLIKE": {
+            const buzzDisLike = state.buzzPost.map((item) => action.data._id === item._id ? action.data : item);
+            return {
+                ...state,
+                buzzPost: buzzDisLike
+            }
+        }
         default: {
             return state;
         }
