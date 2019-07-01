@@ -12,7 +12,6 @@ export const allUser=()=>dispatch=>{
             dispatch(allUserToState(res.data))
         })
         .catch((err)=>{
-            console.log(err);
             errorAlert("Some error occcured while fetching user details!")
         })
 }
@@ -36,13 +35,11 @@ export const resolveUserStatus=(formData)=>dispatch=>{
                 url:`${ACCOUNT_STATUS_URL}`,
                 data:formData})
                 .then(res=>{
-                    console.log('reached here');
                     const updatedStatus=formData.get('resolve');
                     const googleId=formData.get('googleId');
                     dispatch(addUserCommit({updatedStatus,googleId}))
                 })
                 .catch(err=>{
-                    console.log(err);
                     errorAlert("Some error occured while changing the status of the user!")
                 })
         } else {
