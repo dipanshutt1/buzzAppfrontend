@@ -10,7 +10,6 @@ export const userProfile=()=>dispatch=>{
             dispatch(userProfileToState(res.data))
         })
         .catch((err)=>{
-            console.log(err);
         })
 }
 

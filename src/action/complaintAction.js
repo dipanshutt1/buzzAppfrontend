@@ -16,14 +16,12 @@ export const addComplaint=(complaintData)=>dispatch=>{
                 successAlert("Your complaint has been locked!!")
             }
         }).catch(err=>{
-            console.log('hello error',err);
             errorAlert("Some error occured while registering the complaint!!")
         }
     )
 }
 
 export const addComplaintToState=(data)=>{
-    console.log(`hello ${JSON.stringify(data)}`)
     return {
         type:'COMPLAINT_POST',
         data
@@ -36,11 +34,9 @@ export const showComplaint=()=> dispatch => {
         url:`${COMPLAINT_URL}`,
     })
         .then(res=>{
-            console.log("res data",res.data);
             dispatch(showComplaintPostToState(res.data))
 
         }).catch(res=>{
-            console.log("show complaint error is ",res.err);
             errorAlert("Some error occured. Please try after some time!")
         }
     )

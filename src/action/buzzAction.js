@@ -7,7 +7,7 @@ let dislike=false;
 export const addBuzz=(formData)=> dispatch=> {
     axiosInstance({
         method:'post',
-        url:`${BUZZ_URL}`,
+        url:`${BUZZ_URL}`,      //BUZZ_URL
         data:formData,
         config:{
             headers:{
@@ -18,12 +18,10 @@ export const addBuzz=(formData)=> dispatch=> {
         .then(res=>{
             if(res.data.message==="Success")
                 {
-                    console.log(`hehehe` , res.data);
                     dispatch(addBuzzPostToState(res.data.result))
                 }
             successAlert("Your buzz is posted successfully!")
         }).catch((err) => {
-            console.error(err);
             errorAlert("Unable to post the buzz!")
     })
 }
@@ -36,7 +34,7 @@ const addBuzzPostToState=(data)=>
 export const showBuzz=(skip)=> dispatch => {
     axiosInstance({
         method:'get',
-        url:`${BUZZ_URL}/${skip}`,
+        url:`${BUZZ_URL}/${skip}`,      //BUZZ_URL
         config: {
             headers:{
                 'Content-Type':'multipart/form-data'
@@ -44,11 +42,9 @@ export const showBuzz=(skip)=> dispatch => {
         }
     })
         .then(res=>{
-            console.log("res.data",res.data)
             dispatch(showBuzzPostToState(res.data))
         })
         .catch(err=>{
-            console.log("some error occured ",err);
             errorAlert("Some Error occured !")
             }
         )
@@ -86,7 +82,6 @@ export const postLike = buzzId => dispatch => {
         )
         .catch(
             res => {
-                console.log("Error occured while liking post", res.err)
                 errorAlert("Something went wrong")
             }
         )
@@ -121,7 +116,6 @@ export const postDislike = buzzId => dispatch => {
         )
         .catch(
             res => {
-                console.log("Error occured while disliking post", res.err)
                 errorAlert("something went wrong")
             }
         )

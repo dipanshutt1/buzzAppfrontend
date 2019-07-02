@@ -13,11 +13,9 @@ export const showAllComplaint=()=> dispatch=>{
         }
     })
         .then(res=>{
-            console.log('res data is',res.data)
             dispatch(showComplaintToState(res.data))
         })
         .catch(err=>{
-            console.log("some error occured",err);
             errorAlert("Some error occured !")
         })
 };
@@ -30,7 +28,6 @@ export const showComplaintToState=(data) =>{
 };
 
 export const showMyComplaint=()=> dispatch=>{
-    console.log('hello');
     axiosInstance({
         method:'get',
         url:`${RESOLVE_MY_COMPLAINT_URL}`,
@@ -41,7 +38,6 @@ export const showMyComplaint=()=> dispatch=>{
         }
     })
         .then(res=>{
-            console.log('res data is',res.data);
             dispatch(showComplaintToState(res.data))
         })
         .catch(err=>{
@@ -61,7 +57,6 @@ export const resolveCommit=(formData)=>dispatch=>{
                 successAlert('The status of your complaint has been changed!')
             })
             .catch((err)=>{
-                console.log(err);
                 errorAlert("Unable to update your complaint status. Please try after sometime!")
             })
 }
