@@ -5,7 +5,6 @@ class ComplaintThread extends Component {
 
 
     render() {
-        console.log('these are props',this.props.complaint)
         const{department,issue_id,assigned_to,status}=this.props.complaint
         return (
             <tr>

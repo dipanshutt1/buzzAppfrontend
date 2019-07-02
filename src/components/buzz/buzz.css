@@ -20,9 +20,11 @@ input[type=file]{
 }
 .fa-thumbs-up{
     color:#091341;
+    cursor: pointer;
 }
 .fa-thumbs-down{
     color: #091341;
+    cursor: pointer;
 }
 .myBtn1{
     outline: none;
@@ -31,6 +33,7 @@ input[type=file]{
 }
 .form-component{
     margin: 25px;
+    cursor: pointer;
 }
 .form-label{
     background:#B6B4B0;

@@ -6,7 +6,6 @@ import mapDispatchToProps from "react-redux/es/connect/mapDispatchToProps";
 
 class Menu extends Component {
     render() {
-        console.log('Menu Render', this.props.user.userProfile);
         return (
             <div className="menu">
 

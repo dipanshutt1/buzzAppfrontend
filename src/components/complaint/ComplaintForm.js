@@ -13,25 +13,24 @@ class ComplaintForm extends Component {
         }
     }
 
-    handleChange=(e)=>{
+    handleChange=(event)=>{
         this.setState({
-            [e.target.name]:e.target.value
+            [event.target.name]:event.target.value
         })
     }
-    handleFileUpload=(e)=>{
+    handleFileUpload=(event)=>{
         this.setState({
-            image:e.target.files[0]
+            image:event.target.files[0]
         })
     }
-    handleSubmit=(e)=>{
-        e.preventDefault();
+    handleSubmit=(event)=>{
+        event.preventDefault();
         const newComplaint=this.state;
         const complaintData=new FormData();
         complaintData.append('department',newComplaint.department);
         complaintData.append('concern',newComplaint.concern);
         complaintData.append('title',newComplaint.title);
         complaintData.append('image',newComplaint.image);
-        console.log('complaint data',complaintData)
         this.props.addComplaint(complaintData);
 
         this.setState({

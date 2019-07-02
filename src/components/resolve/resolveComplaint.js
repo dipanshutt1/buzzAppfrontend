@@ -32,8 +32,8 @@ class ResolveComplaint extends Component {
             <div>
                 <div className="form-label form-component">Complaints</div>
                 <select name="complaintFilter" style={{padding:"10px",width:"40%"}} className="myBtn myBtn1" onChange={this.handleChange}>
-                    <option value="all">All</option>
-                    <option value="my">My</option>
+                    <option value="all">All complaints</option>
+                    <option value="my">Assigned to me</option>
                 </select>
                 <table className="table table-striped">
                     <thead className="thead-dark">

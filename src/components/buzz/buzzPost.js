@@ -13,7 +13,6 @@ class BuzzPost extends Component {
     }
     componentDidMount() {
         this.props.showBuzz(this.state.skip);
-        console.log(this.props);
     }
     handleLoading=()=>{
         setTimeout(()=>{
@@ -26,9 +25,6 @@ class BuzzPost extends Component {
     }
 
     render() {
-        console.log('heheke',this.props.data);
-        console.log('skip ',this.state.skip);
-        console.log('userpost are ',this.props.userPost.length);
         return (
             <div className="buzz-list">
                 <InfiniteScroll

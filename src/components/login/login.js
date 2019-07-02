@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './style.css';
 import ttnlogo1 from '../../assets/ttnlogo.png'
-import TokenComponent from '../Token';
 
 export default class Login extends Component {
     componentDidMount() {

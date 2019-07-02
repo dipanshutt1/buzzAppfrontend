@@ -7,21 +7,19 @@ import {postLike,postDislike} from '../../action/buzzAction';
 class BuzzThread extends Component {
     Like = () => {
         console.log(`hey there ${this.props.post._id}`)
-        const fd=new FormData();
-        fd.append('buzzId', this.props.post._id)
-        this.props.postLike(fd);
+        const formData=new FormData();
+        formData.append('buzzId', this.props.post._id)
+        this.props.postLike(formData);
     }
 
     Dislike = () => {
-        const fd=new FormData();
-        fd.append('buzzId', this.props.post._id)
-        this.props.postDislike(fd);
+        const formData=new FormData();
+        formData.append('buzzId', this.props.post._id)
+        this.props.postDislike(formData);
     }
     render() {
 
         const{category,content,imageUrl,date_created,posted_by,like,dislike,thumbnail}=this.props.post
-        console.log(this.props.post);
-        console.log("@@@@@@@",imageUrl)
         return (
                 <div className='card' style={{marginTop:"20px"}}>
                     <div className="card-header">
@@ -41,7 +39,6 @@ class BuzzThread extends Component {
                     <div className=''>
                             <div style={{margin:"10px"}}>{content}</div>
 
-                        {/*<li className='buzz-description'>{description}</li>*/}
                         <img src={imageUrl} style={{borderRadius:"5px", width:"500px"}} className="card-img-bottom" alt="" height="auto" />
                     </div>
 

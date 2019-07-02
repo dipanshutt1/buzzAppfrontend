@@ -9,7 +9,6 @@ class AllUserDetails extends Component {
     }
 
     render() {
-        // console.log('jerry',this.props.allUserData)
         return (
             <div className="form-component">
                 <table className="table table-striped">
@@ -26,7 +25,6 @@ class AllUserDetails extends Component {
                         {this.props.allUserData
                             .filter((data) => data.email !== 'deepanshu@tothenew.com')
                             .map((data)=>{
-                            console.log('jjjjjj',data)
                             return (
                                 <AllUserThread user={data}/>
                             )

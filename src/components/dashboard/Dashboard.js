@@ -10,7 +10,6 @@ import {connect} from "react-redux";
 import AllUser from "../allUser/allUser";
 import ttnlogo from '../../assets/ttnlogo.png';
 import banner2 from '../../assets/banner2.jpg';
-import ErrorPage from "../Error/ErrorPage";
 
 class Dashboard extends Component {
 
@@ -52,19 +51,20 @@ class Dashboard extends Component {
 
                             <Route
                                 exact
-                                strict
                                 path={`${this.props.match.path}/buzz`}
                                 component={Buzz}
                             />
                             <Route
-                                exact path="/dashboard/complaint"
+                                exact
+                                path={`${this.props.match.path}/complaint`}
                                 component={Complaint}
                             />
                             {
                                 this.props.user.userProfile.userRole === 'USER' ?
                                     null :
                                     <Route
-                                        exact path="/dashboard/resolve"
+                                        exact
+                                        path="/dashboard/resolve"
                                         component={Resolve}
                                     />
                             }
@@ -76,13 +76,12 @@ class Dashboard extends Component {
                                     /> :
                                     null
                             }
-                            <Route to={"*"} component={Buzz} />
-                            {/*<Redirect*/}
-                            {/*    to={*/}
-                            {/*        {*/}
-                            {/*            pathname: '/pagenotfound'*/}
-                            {/*        }*/}
-                            {/*    }*/}
+                            <Redirect
+                                to={
+                                    {
+                                        pathname: '/pagenotfound'
+                                    }
+                                }
                             />
                         </Switch>
                     </section>

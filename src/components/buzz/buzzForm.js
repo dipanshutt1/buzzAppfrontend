@@ -48,11 +48,9 @@ class BuzzForm extends Component {
                       method="POST"
                       encType={'multipart/form-data'}
                       >
-                    {/*<div className="form-row">*/}
-                    {/*</div>*/}
                     <div>
                         <div className="form-row">
-                            <label className="form-label" htmlFor="create buzz">To The New Buzz  </label><i className="fa fa-pencil fa-2x     "></i>
+                            <label className="form-label" htmlFor="create buzz">To The New Buzz <i className="fa fa-pencil"></i></label>
                         </div>
                         <textarea style={{border:"2px solid #091341"}}
                                   name='buzzContent'
@@ -97,13 +95,8 @@ class BuzzForm extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    console.log("inside mapStateToProps", state);
     return { userfeed: state.buzzReducer }
 }
-
-// const mapDispatchToProps = (dispatch) => ({
-// addBuzz: (data) => dispatch(addBuzz(data))
-// });
 const mapDispatchToProps = {
     addBuzz
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import{resolveCommit} from "../../action/resolveAction";
+import ComplaintDetails from "../complaint/complaintDetails";
 
 class ResolveThread extends Component {
 
@@ -20,7 +21,7 @@ class ResolveThread extends Component {
         })
     }
     render() {
-        const {department, issue_id, assigned_to, name, status, email} = this.props.allComplaint;
+        const {department, issue_id, assigned_to, name, status, email,} = this.props.allComplaint;
 
         return (
 

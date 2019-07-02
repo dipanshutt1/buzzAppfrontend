@@ -1,22 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {resolveUserStatus,allUser} from "../../action/allUserAction";
-import swal from 'sweetalert';
+import {resolveUserStatus} from "../../action/allUserAction";
 class AllUserThread extends Component {
     state={
         resolve:'Activate'
     };
-    componentDidMount() {
-        // this.props.resolveUserStatus();
-        // this.props.allUser();
-    }
 
     handleClick=(e,googleId)=>{
         e.preventDefault();
         const formData=new FormData();
         formData.append('resolve',this.state.resolve);
         formData.append('googleId',googleId);
-        console.log(`Google Id ${googleId}`);
         this.props.resolveUserStatus(formData);
     };
     handleChange=(e)=>{
@@ -26,8 +20,7 @@ class AllUserThread extends Component {
     };
 
     render() {
-        console.log('deoeoaoao',this.props.user);
-        const{userName, userImg,email,department,userRole,googleId}=this.props.user
+        const{userName,email,userRole,googleId}=this.props.user
         return (
             <tr>
                 <td>{userName}</td>
