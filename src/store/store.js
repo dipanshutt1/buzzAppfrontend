@@ -1,6 +1,4 @@
 import{createStore,applyMiddleware, compose} from "redux";
-import buzzReducer from "../reducer/buzzReducer";
-import complaintReducer from '../reducer/complaintReducer';
 import thunk from 'redux-thunk';
 import reducers from '../reducer/combineReducer';
 
